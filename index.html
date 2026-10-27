@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponto de Amor</title>
+    <style>
+        /* ==========================================================================
+           ESTILOS GERAIS
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fff5f6; /* Fundo rosa pastel bem clarinho e suave */
+            color: #5a4b4c; /* Texto em tom marrom acinzetado */
+        }
+
+        /* ==========================================================================
+           CABEÇALHO E MENU
+           ========================================================================== */
+        header {
+            background-color: #ffffff;
+            padding: 20px 5%;
+            box-shadow: 0 4px 10px rgba(224, 102, 102, 0.05); /* Sombra bem leve e rosada */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo h2 {
+            color: #d98895; /* Rosa do Logotipo */
+            font-weight: 700;
+            font-size: 1.5rem; /* Tamanho delicado para a logo */
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #9c7c81; /* Cor dos links neutra e delicada */
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #d98895; /* Fica rosa ao passar o mouse */
+        }
+
+        /* ==========================================================================
+           BANNER PRINCIPAL (HERO)
+           ========================================================================== */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #ffeef0; /* Um tom de rosa ligeiramente mais aconchegante */
+            border-bottom-left-radius: 40px; /* Bordas arredondadas */
+            border-bottom-right-radius: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: #bfa57a; /* Dourado/Bege queimado suave */
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #7d6b6d;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        /* Botão "Ver Modelos" */
+        .btn {
+            display: inline-block;
+            background-color: #d98895; /* Rosa romântico */
+            color: #ffffff;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 30px; /* Bordas bem arredondadas estilo nuvem */
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(217, 136, 149, 0.3);
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #c97381;
+            transform: scale(1.03); /* Dá um leve pulinho ao passar o mouse */
+        }
+
+        /* ==========================================================================
+           VITRINE DE PRODUTOS
+           ========================================================================== */
+        .produtos-container {
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .produtos-container h2 {
+            margin-bottom: 40px;
+            color: #7d6b6d;
+            font-size: 1.8rem;
+        }
+
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Card do Sapatinho */
+        .card-produto {
+            background: #ffffff;
+            border: 2px solid #fff0f2; /* Bordinha rosa muito sutil */
+            border-radius: 20px; /* Cantos arredondados baby */
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(217, 136, 149, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-produto img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        .card-produto figcaption {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #5a4b4c;
+            margin-bottom: 15px;
+        }
+
+        /* Botão Comprar do Card */
+        .btn-comprar {
+            display: inline-block;
+            background-color: #d98895;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(217, 136, 149, 0.2);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-comprar:hover {
+            background-color: #c97381;
+            transform: scale(1.05);
+        }
+
+        /* ==========================================================================
+           SEÇÃO DE CONTATO
+           ========================================================================== */
+        .contato-container {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #ffeef0; /* Fundo rosa aconchegante */
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+            margin-top: 60px;
+        }
+
+        .contato-container h2 {
+            color: #7d6b6d;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        .contato-container p {
+            color: #9c7c81;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .links-contato {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+        }
+
+        /* Botões das Redes Sociais */
+        .btn-contato {
+            display: inline-block;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-contato:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .whatsapp {
+            background-color: #25D366; /* Verde oficial do WhatsApp */
+        }
+
+        .instagram {
+            background-color: #E1306C; /* Rosa oficial do Instagram */
+        }
+
+        /* ==========================================================================
+           RODAPÉ
+           ========================================================================== */
+        footer {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 25px 20px;
+            color: #9c7c81;
+            font-size: 0.85rem;
+            border-top: 1px solid #fff0f2;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Topo do site -->
+    <header>
+        <div class="logo">
+            <h2>Ponto de Amor</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Banner Principal (Hero) -->
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <h1>Ponto de Amor</h1>
+                <p>Conforto e carinho em forma de calçados</p>
+                <a href="#produtos" class="btn">Ver modelos</a>
+            </div>
+        </section>
+
+        <!-- Vitrine de Produtos -->
+        <section id="produtos" class="produtos-container">
+            <h2>Nossos sapatinhos</h2>
+            
+            <div class="grid-produtos">
+                <!-- Produto 1 -->
+                <div class="card-produto">
+                    <figure>
+                        <img src="WhatsApp Image 2026-10-22 at 19.52.53.jpeg" alt="sapatinho flora">
+                        <figcaption>Sandalinha flora R$ 28,00</figcaption>
+                    </figure>
+                    <!-- O botão comprar também direciona direto para o seu WhatsApp para facilitar o pedido -->
+                    <a href="https://wa.me." target="_blank" class="btn-comprar">
+                        Comprar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contato" class="contato-container">
+            <h2>Fale Conosco</h2>
+            <p>Escolha o canal de sua preferência para falar com a Ponto de Amor</p>
+            
+            <div class="links-contato">
+                <!-- Link do WhatsApp -->
+                <a href="https://wa.me/32998190438." target="_blank" class="btn-contato whatsapp">
+                    💬 Conversar no WhatsApp
+                </a>
+
+                <!-- Link do Instagram -->
+                <a href="https://www.instagram.com/pontodeamorbb/" target="_blank" class="btn-contato instagram">
+                    📸 Seguir no Instagram
